@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="cinema.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2004"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="Bookings" custom_title="0" dock_id="1" table="4,8:mainBookings"/><dock_state state="000000ff00000000fd00000001000000020000043c000002b4fc0100000001fb000000160064006f0063006b00420072006f007700730065003101000000000000043c0000011800ffffff000002580000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">-- Insert sample data into the Movies table
+INSERT INTO Movies (title, genre, duration_minutes, release_date, poster_url) VALUES
+('Inception', 'Sci-Fi, Thriller', 148, '2010-07-16', 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg'),
+('The Dark Knight', 'Action, Crime, Drama', 152, '2008-07-18', 'https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg'),
+('Interstellar', 'Adventure, Drama, Sci-Fi', 169, '2014-11-07', 'https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg'),
+('Parasite', 'Comedy, Drama, Thriller', 132, '2019-10-11', 'https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg');
+
+-- Insert sample data into the Theaters table
+INSERT INTO Theaters (name, capacity) VALUES
+('Screen 1', 120),
+('IMAX Hall', 250),
+('Screen 3 (VIP)', 50);
+-- Insert sample data into the Showtimes table
+-- Format: 'YYYY-MM-DDTHH:MM:SS'
+INSERT INTO Showtimes (movie_id, theater_id, show_time) VALUES
+-- Inception Showtimes
+(1, 1, '2024-05-21T18:00:00'), -- Inception in Screen 1 at 6:00 PM
+(1, 2, '2024-05-21T21:00:00'), -- Inception in IMAX Hall at 9:00 PM
+
+-- The Dark Knight Showtimes
+(2, 2, '2024-05-21T17:30:00'), -- The Dark Knight in IMAX Hall at 5:30 PM
+(2, 1, '2024-05-21T21:30:00'), -- The Dark Knight in Screen 1 at 9:30 PM
+
+-- Interstellar Showtimes
+(3, 2, '2024-05-22T20:00:00'), -- Interstellar in IMAX Hall tomorrow at 8:00 PM
+
+-- Parasite Showtimes
+(4, 3, '2024-05-21T19:00:00'); -- Parasite in Screen 3 (VIP) at 7:00 PM</sql><current_tab id="0"/></tab_sql></sqlb_project>
